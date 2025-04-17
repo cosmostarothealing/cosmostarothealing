@@ -87,7 +87,7 @@ const TestimonialSlider = () => {
               transition={{ duration: 0.5 }}
               className="w-full"
             >
-              <p className="text-2xl md:text-4xl font-light text-[#826540] leading-snug">
+              <p className="text-md md:text-4xl font-light text-[#826540] leading-snug">
                 "{testimonials[index].quote}"
               </p>
               <p className="mt-8 text-[#3e3e3e] font-medium">
