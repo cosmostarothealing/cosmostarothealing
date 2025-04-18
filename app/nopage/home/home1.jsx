@@ -107,7 +107,7 @@ const Hero = () => {
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.8 }}
-                        className="relative lg:mt-0 mt-12"
+                        className="relative lg:mt-0 lg:mt-12"
                     >
                         {/* Main Product Image */}
                         <motion.div

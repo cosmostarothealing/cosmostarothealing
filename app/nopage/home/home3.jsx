@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Tarot from "../../../public/tarot.png"
 import Reiki from "../../../public/reiki.png"
-import Crystals from "../../../public/crystals.png"
+import Crystals from "../../../public/crystal1.png"
 import Link from "next/link"
 
 export default function Page() {
@@ -42,7 +42,13 @@ export default function Page() {
                 {/* CRYSTALS */}
                 <div className="flex flex-col lg:w-1/3 justify-around items-center group">
                     <div className="transition-transform duration-300 group-hover:scale-105">
-                        <Image src={Crystals} className="w-72" alt="Crystals picture" />
+                        <div className="w-72 p-3 border border-dashed border-[#ca9d75] rounded-t-full overflow-hidden">
+                            <Image
+                                src={Crystals}
+                                alt="Crystals picture"
+                                className="w-full rounded-t-full"
+                            />
+                        </div>
                     </div>
                     <div className="flex flex-col items-center text-center px-10 py-2">
                         <h1 className="text-3xl lg:text-4xl tracking-wider font-extralight text-[#926d41] mb-4">CRYSTALS</h1>
@@ -54,9 +60,11 @@ export default function Page() {
                         </Link>
                     </div>
                 </div>
+
+
             </div>
 
-            
+
         </>
     )
 };
