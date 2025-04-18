@@ -19,10 +19,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#800505] text-white relative overflow-hidden">
+    <footer className="bg-[#800505] text-white relative overflow-hidden ">
       {/* Decorative Top Border */}
       <motion.div
-        className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-amber-200 to-amber-400"
+        className="absolute top-0 left-0 right-0 h-1  bg-gradient-to-r from-amber-400 via-amber-200 to-amber-400"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         transition={{ duration: 1.5 }}
@@ -102,7 +102,7 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           className="text-center text-gray-300 text-sm"
         >
-          © {new Date().getFullYear()} Cosmic Wisdom. All rights reserved.<br />
+          © {new Date().getFullYear()} Cosmostarot & Healing. All rights reserved.<br />
           <div className="mt-2">
             <Link href="/privacy" className="hover:text-amber-200">Sacred Privacy</Link> • 
             <Link href="/terms" className="hover:text-amber-200 mx-2">Universal Terms</Link>

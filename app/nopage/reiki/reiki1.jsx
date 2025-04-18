@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
-const TarotPage = () => {
+const ReikiPage = () => {
     const fadeIn = {
         initial: { opacity: 0, y: 40 },
         animate: { opacity: 1, y: 0, transition: { duration: 1 } },
@@ -12,22 +12,23 @@ const TarotPage = () => {
 
     const faqs = [
         {
-            question: "What can tarot tell me?",
-            answer: "Tarot provides insight into your current path and helps you reflect on emotions, relationships, and choices — not a fixed future."
+            question: "What is Reiki healing?",
+            answer: "Reiki is a Japanese energy healing technique that promotes relaxation, reduces stress, and supports the body's natural healing processes."
         },
         {
-            question: "Is tarot connected to religion or superstition?",
-            answer: "Tarot is a symbolic system that anyone can use, regardless of belief. It's more psychological and intuitive than religious."
+            question: "Do I need to believe in Reiki for it to work?",
+            answer: "No belief is required. Reiki works with your body's energy whether you're spiritual, skeptical, or simply curious."
         },
         {
-            question: "Do I need to prepare for a tarot session?",
-            answer: "Just come with an open mind and an honest intention. No special preparation is needed."
+            question: "What does a Reiki session feel like?",
+            answer: "Most people feel warmth, tingling, or deep relaxation during a session. Some may feel emotional release or mental clarity afterward."
         },
         {
-            question: "How accurate are tarot readings?",
-            answer: "Accuracy depends on interpretation and energy. Tarot works best as a reflective tool, not a crystal ball."
+            question: "Is Reiki a replacement for medical treatment?",
+            answer: "Reiki is a complementary therapy. It supports overall well-being but should not replace professional medical care."
         }
     ]
+
 
     const [openIndex, setOpenIndex] = useState(null)
 
@@ -46,11 +47,21 @@ const TarotPage = () => {
     return (
         <div className="bg-[#faf9f8]">
             {/* 1. Hero Section */}
-            <section
-                className="relative h-[60vh] flex items-center justify-center text-white bg-cover bg-cente bg-black/40"
-                style={{ backgroundImage: "url('/tarot-b1.png')" }} // make sure this is in your public folder
-            >
-                <div className="max-w-7xl px-4 text-center   py-20 rounded-xl">
+            <section className="relative h-[70vh] flex items-center justify-center text-white overflow-hidden">
+                {/* Mobile Background */}
+                <div
+                    className="absolute inset-0 bg-cover bg-bottom bg-black/40 lg:hidden"
+                    style={{ backgroundImage: "url('/reiki-b1.png')" }}
+                ></div>
+
+                {/* Desktop Background */}
+                <div
+                    className="absolute inset-0 bg-cover bg-bottom bg-black/40 hidden lg:block"
+                    style={{ backgroundImage: "url('/reiki-b.png')" }}
+                ></div>
+
+                {/* Content */}
+                <div className="relative z-10 max-w-7xl px-4 text-center text-white py-20 rounded-xl">
                     <motion.h1
                         initial={{ y: 50 }}
                         animate={{ y: 0 }}
@@ -58,42 +69,43 @@ const TarotPage = () => {
                         className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
                     >
                         <span className="bg-white bg-clip-text text-transparent">
-                            Discover Your Path
+                            Experience Deep Healing
                         </span>
                         <br />
-                        Through Tarot
+                        with Reiki Energy
                     </motion.h1>
 
                     <motion.p className="text-xl mb-8 max-w-2xl mx-auto" {...fadeIn}>
-                        Gain clarity, insight, and spiritual guidance from the ancient art of tarot
+                        Rebalance your energy, relieve stress, and awaken inner peace through the gentle touch of Reiki
                     </motion.p>
 
                     <motion.div whileHover={{ scale: 1.05 }}>
                         <button className="bg-[#800505] text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-[#680404] transition-all">
-                            Book a Tarot Session
+                            Book a Reiki Session
                         </button>
                     </motion.div>
                 </div>
             </section>
 
+
+
             {/* 2. What is Tarot? */}
             <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Text Section */}
                     <motion.div
                         className="space-y-6 text-justify"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                     >
-                        <h2 className="text-4xl font-bold text-gray-900">
-                            The Mirror of the Soul
-                        </h2>
+                        <h2 className="text-4xl font-bold text-gray-900">Reiki: Energy for Inner Balance</h2>
                         <p className="text-lg text-gray-600">
-                            Tarot is a 500-year-old symbolic language that acts as a mirror to your subconscious.
-                            Through archetypal imagery and intuitive interpretation, we uncover hidden patterns
-                            and potential paths forward.
+                            Reiki is a gentle Japanese energy healing technique that promotes relaxation, reduces stress,
+                            and supports the body’s natural healing. By channeling universal life force energy through the hands,
+                            Reiki helps balance your energy fields and restore harmony within.
                         </p>
                         <div className="flex gap-4">
-                            {['🃏', '👑', '🌙'].map((icon, i) => (
+                            {['✨', '👐', '💖'].map((icon, i) => (
                                 <motion.div
                                     key={i}
                                     className="text-4xl p-4 bg-[#f6f5f4] rounded-lg"
@@ -105,12 +117,13 @@ const TarotPage = () => {
                         </div>
                     </motion.div>
 
+                    {/* Image Grid */}
                     <div className="grid grid-cols-2 gap-4">
                         {[
-                            "/t1.png",
-                            "/t2.png",
-                            "/t3.png",
-                            "/t4.png"
+                            "/r1.png", // hands near heart chakra
+                            "/r2.png", // soft light over body
+                            "/r3.png", // reiki symbols (Cho Ku Rei etc.)
+                            "/r4.png", // peaceful person meditating with glow
                         ].map((src, i) => (
                             <motion.div
                                 key={i}
@@ -119,8 +132,8 @@ const TarotPage = () => {
                             >
                                 <img
                                     src={src}
-                                    alt={`Tarot Card ${i + 1}`}
-                                    className="w-full h-full object-fit rounded-lg"
+                                    alt={`Reiki Image ${i + 1}`}
+                                    className="w-full h-full object-cover rounded-lg bg-red-800"
                                 />
                             </motion.div>
                         ))}
@@ -129,33 +142,34 @@ const TarotPage = () => {
             </section>
 
 
+
             {/* 3. Reading Styles */}
-            <section className="py-20 bg-[#f6f5f4] text-white">
+            <section className="py-20 bg-[#F3E8FF] text-gray-800">
                 <div className="max-w-7xl mx-auto px-4">
-                    <h2 className="text-4xl font-bold text-center mb-16 text-black uppercase">Reading Styles</h2>
+                    <h2 className="text-4xl font-bold text-center mb-16 uppercase text-[#5E35B1]">Reiki Healing Options</h2>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
-                            { icon: '🃏', title: 'Quick Guidance', duration: '15min', price: '49' },
-                            { icon: '🔮', title: 'Past/Present/Future', duration: '30min', price: '89' },
-                            { icon: '🌕', title: 'Celtic Cross', duration: '60min', price: '149' },
-                            { icon: '💖', title: 'Love Focus', duration: '45min', price: '119' }
-                        ].map((reading, i) => (
+                            { icon: '👐', title: 'Chakra Balance', duration: '30min', price: '69' },
+                            { icon: '💫', title: 'Emotional Release', duration: '45min', price: '99' },
+                            { icon: '🌿', title: 'Stress Relief', duration: '60min', price: '129' },
+                            { icon: '🌸', title: 'Deep Healing', duration: '90min', price: '159' }
+                        ].map((session, i) => (
                             <motion.div
-                                key={reading.title}
+                                key={session.title}
                                 variants={cardHover}
                                 whileHover="hover"
-                                className="p-8 bg-[#1a1630] rounded-2xl border border-[#800505]/20"
+                                className="p-8 bg-white rounded-2xl border border-purple-200 shadow-md transition-shadow hover:shadow-xl"
                             >
-                                <div className="text-5xl mb-6">{reading.icon}</div>
-                                <h3 className="text-2xl font-bold mb-4">{reading.title}</h3>
-                                <div className="space-y-2 text-gray-400">
-                                    <p>{reading.duration} session</p>
-                                    <p className="text-xl text-[#ff6868]">${reading.price}</p>
+                                <div className="text-5xl mb-6">{session.icon}</div>
+                                <h3 className="text-2xl font-bold mb-4 text-[#4A148C]">{session.title}</h3>
+                                <div className="space-y-2 text-gray-600">
+                                    <p>{session.duration} session</p>
+                                    <p className="text-xl text-[#FF80AB] font-semibold">${session.price}</p>
                                 </div>
-                                <div className="mt-6 h-px bg-[#800505]/30" />
-                                <button className="mt-6 w-full py-3 rounded-lg bg-[#800505] hover:bg-[#680404] transition-colors">
-                                    Choose
+                                <div className="mt-6 h-px bg-purple-100" />
+                                <button className="mt-6 w-full py-3 rounded-lg bg-[#7E57C2] text-white hover:bg-[#5E35B1] transition-colors">
+                                    Book Now
                                 </button>
                             </motion.div>
                         ))}
@@ -163,15 +177,17 @@ const TarotPage = () => {
                 </div>
             </section>
 
+
+
             {/* 4. Why Choose Us */}
             <section className="py-20 bg-[#f6f5f4] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden">
+                    <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-3xl overflow-hidden items-center justify-center flex">
                         <img
-                            src="/tarot-b.png"
-                            alt="Tarot Reading Session"
-                            className="w-full h-full object-cover rounded-3xl"
+                            src="/reiki-e.png" // use your reiki background image here
+                            alt="Reiki Healing Session"
+                            className=" h-full object-fit rounded-3xl"
                         />
                     </div>
 
@@ -182,13 +198,13 @@ const TarotPage = () => {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-                            Sacred Space for Insight
+                            Energetic Alignment & Healing
                         </h2>
 
                         {[
-                            { title: '20+ Years Experience', desc: 'Certified readers with proven track record' },
-                            { title: '100% Private', desc: 'Confidential and judgment-free zone' },
-                            { title: 'Virtual or In-Person', desc: 'Secure video sessions available worldwide' }
+                            { title: 'Certified Reiki Masters', desc: 'Trained in Usui and intuitive energy healing practices' },
+                            { title: 'Calm & Confidential', desc: 'A peaceful, private space for deep healing' },
+                            { title: 'Distance or In-Person', desc: 'Receive healing from anywhere in the world' }
                         ].map((item, i) => (
                             <div key={item.title} className="flex gap-4 items-start">
                                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#800505] text-white flex items-center justify-center text-sm sm:text-base">
@@ -251,4 +267,4 @@ const TarotPage = () => {
     );
 };
 
-export default TarotPage;
+export default ReikiPage;

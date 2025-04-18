@@ -14,9 +14,9 @@ const Navbar = () => {
     const navItems = [
         { name: 'Tarot Reading', href: '/tarot-reading' },
         { name: 'Reiki Healing', href: '/reiki-healing' },
-        { name: 'About Us', href: '/about' },
+        { name: 'About Us', href: '/about-us' },
         // { name: 'Blog', href: '/blog' },
-        { name: 'Contact Us', href: '/contact' },
+        { name: 'Contact Us', href: '/contact-us' },
     ];
 
     const containerVariants = {

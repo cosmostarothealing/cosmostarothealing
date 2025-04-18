@@ -1,10 +1,9 @@
-import Tarot1 from "../nopage/tarot/tarot1"
-
+import About1 from "../nopage/about/about1"
 
 export default function Page(){
     return(
         <>
-        <Tarot1/>
+        <About1/>
         </>
     )
 }
