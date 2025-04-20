@@ -19,7 +19,7 @@ export default function AboutPage() {
               Meet <span className="text-[#800505]">Chitrangdaa Shany,</span>
             </h1>
             <p className="text-lg text-[#555]">
-              I’m an intuitive guide and energy healer, helping souls rediscover their path through connection, light, and ancient wisdom. 🌿
+              I&apos;m an intuitive guide and energy healer, helping souls rediscover their path through connection, light, and ancient wisdom. 🌿
             </p>
           </motion.div>
 
@@ -31,7 +31,7 @@ export default function AboutPage() {
             className="mt-10 lg:mt-0 lg:w-1/3 relative"
           >
             <img
-              src="/r2.png"
+              src="/owner.jpeg"
               alt="Chitrangdaa Shany"
               className="w-full border-4 border-[#800505]/20 shadow-xl 
                          rounded-xl lg:rounded-full transition-all duration-500"
@@ -71,7 +71,7 @@ export default function AboutPage() {
             What I Offer
           </motion.h2>
           <p className="text-[#666] max-w-2xl mx-auto">
-            Every session is tailored to nourish your soul’s journey. Here’s how I can support your transformation.
+            Every session is tailored to nourish your soul&apos;s journey. Here&apos;s how I can support your transformation.
           </p>
         </div>
 

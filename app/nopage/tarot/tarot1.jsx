@@ -186,7 +186,7 @@ const TarotPage = () => {
                         </h2>
 
                         {[
-                            { title: '20+ Years Experience', desc: 'Certified readers with proven track record' },
+                            { title: '4+ Years Experience', desc: 'Certified readers with proven track record' },
                             { title: '100% Private', desc: 'Confidential and judgment-free zone' },
                             { title: 'Virtual or In-Person', desc: 'Secure video sessions available worldwide' }
                         ].map((item, i) => (

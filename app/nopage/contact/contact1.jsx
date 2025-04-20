@@ -22,11 +22,11 @@ export default function ContactPage() {
           <div className="space-y-6 text-white/90">
             <div className="flex items-center gap-4">
               <EnvelopeIcon className="w-6 h-6" />
-              <a href="mailto:chitrangdaa@example.com">chitrangdaa@example.com</a>
+              <a href="mailto:schitrangdaa@gmail.com">schitrangdaa@gmail.com</a>
             </div>
             <div className="flex items-center gap-4">
               <PhoneIcon className="w-6 h-6" />
-              <a href="https://wa.me/919999999999" target="_blank">+91 99999 99999</a>
+              <a href="https://wa.me/918736085038" target="_blank">+91 87360 85038</a>
             </div>
             <div className="flex items-center gap-4">
               <MapPinIcon className="w-6 h-6" />
