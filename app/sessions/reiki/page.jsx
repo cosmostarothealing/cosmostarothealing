@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { SparklesIcon, HeartIcon, SunIcon } from '@heroicons/react/24/solid';
 
+
 export default function ReikiPage() {
     const services = [
         {
@@ -118,9 +119,9 @@ export default function ReikiPage() {
                     <p className="mb-8 text-lg opacity-90">
                         Need personalized energy work? Let's create a custom healing plan for your unique needs.
                     </p>
-                    <button className="bg-white text-[#800505] px-8 py-3 rounded-xl font-bold hover:bg-[#f8dcdc] transition">
+                    <Link href="/contact-us" className="bg-white text-[#800505] px-8 py-3 rounded-xl font-bold hover:bg-[#f8dcdc] transition">
                         Contact for Custom Healing
-                    </button>
+                    </Link>
                 </div>
             </section>
         </div>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { SparklesIcon, MoonIcon, BookOpenIcon } from '@heroicons/react/24/solid';
 
 
+
 export default function TarotPage() {
     const services = {
         generalReadings: [
@@ -198,9 +199,9 @@ export default function TarotPage() {
                     <p className="mb-8 text-lg opacity-90">
                         Can't find what you're looking for? Let's create a custom reading just for you.
                     </p>
-                    <button className="bg-white text-[#800505] px-8 py-3 rounded-xl font-bold hover:bg-[#f8dcdc] transition">
+                    <Link href="/contact-us" className="bg-white text-[#800505] px-8 py-3 rounded-xl font-bold hover:bg-[#f8dcdc] transition">
                         Contact for Custom Reading
-                    </button>
+                    </Link>
                 </div>
             </section>
         </div>

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link';
 
 const TarotPage = () => {
     const fadeIn = {
@@ -69,9 +70,9 @@ const TarotPage = () => {
                     </motion.p>
 
                     <motion.div whileHover={{ scale: 1.05 }}>
-                        <button className="bg-[#800505] text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-[#680404] transition-all">
+                        <Link href="/sessions/tarot" className="bg-[#800505] text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-[#680404] transition-all">
                             Book a Tarot Session
-                        </button>
+                        </Link>
                     </motion.div>
                 </div>
             </section>
