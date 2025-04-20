@@ -131,7 +131,7 @@ const TarotPage = () => {
 
 
             {/* 3. Reading Styles */}
-            <section className="py-20 bg-[#f6f5f4] text-white">
+            {/* <section className="py-20 bg-[#f6f5f4] text-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center mb-16 text-black uppercase">Reading Styles</h2>
 
@@ -162,7 +162,7 @@ const TarotPage = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* 4. Why Choose Us */}
             <section className="py-20 bg-[#f6f5f4] overflow-hidden">

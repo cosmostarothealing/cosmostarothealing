@@ -145,7 +145,7 @@ const ReikiPage = () => {
 
 
             {/* 3. Reading Styles */}
-            <section className="py-20 bg-[#F3E8FF] text-gray-800">
+            {/* <section className="py-20 bg-[#F3E8FF] text-gray-800">
                 <div className="max-w-7xl mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center mb-16 uppercase text-[#5E35B1]">Reiki Healing Options</h2>
 
@@ -176,7 +176,7 @@ const ReikiPage = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
 
 
