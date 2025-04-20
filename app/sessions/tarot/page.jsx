@@ -52,9 +52,9 @@ export default function TarotPage() {
                 duration: '1-2 hrs'
             },
             {
-                name: 'Q&A',
+                name: 'Question and Answers',
                 description: 'General reading where any area of life can be questioned. Rs.100 extra if re-shuffle needed.',
-                price: 'Rs.500+100',
+                price: 'Rs.500',
                 duration: '1-2 hrs'
             }
         ]
@@ -178,9 +178,12 @@ export default function TarotPage() {
                                 <p className="text-[#555] mb-4">{service.description}</p>
                                 <div className="flex justify-between items-center">
                                     <span className="text-2xl font-bold text-[#800505]">{service.price}</span>
-                                    <button className="bg-[#800505] text-white px-4 py-2 rounded-lg hover:bg-[#6a0404] transition">
+                                    <Link
+                                        href={`/sessions/tarot/${service.name.toLowerCase().replace(/ /g, '-')}-${service.price.replace('₹', '')}`}
+                                        className="bg-[#800505] text-white px-4 py-2 rounded-lg hover:bg-[#6a0404] transition"
+                                    >
                                         Book Now
-                                    </button>
+                                    </Link>
                                 </div>
                             </motion.div>
                         ))}

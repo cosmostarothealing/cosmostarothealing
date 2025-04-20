@@ -55,7 +55,7 @@ const BookingPage = () => {
         <div className="max-w-2xl mx-auto p-6 min-h-screen">
             <div className="bg-white rounded-xl shadow-lg p-8">
                 <h1 className="text-3xl font-bold text-[#800505] mb-6">
-                    Book {serviceName}
+                    Book {serviceName} reading
                 </h1>
 
                 <div className="mb-8 p-4 bg-[#800505]/10 rounded-lg">

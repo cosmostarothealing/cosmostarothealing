@@ -30,7 +30,7 @@ export async function POST(req) {
       <table style="margin-top: 20px; border-collapse: collapse; width: 100%;">
         <tr>
           <td style="padding: 8px; border: 1px solid #ccc;"><strong>Service</strong></td>
-          <td style="padding: 8px; border: 1px solid #ccc;">${serviceName} (${servicePrice})</td>
+          <td style="padding: 8px; border: 1px solid #ccc;">${serviceName} Reading for (${servicePrice})</td>
         </tr>
         <tr>
           <td style="padding: 8px; border: 1px solid #ccc;"><strong>Full Name</strong></td>
@@ -66,7 +66,7 @@ export async function POST(req) {
     <p>Thank you for choosing <strong>Sacred Sessions</strong>. We've received your booking request for:</p>
 
     <ul style="list-style: none; padding-left: 0;">
-      <li><strong>Service:</strong> ${serviceName}</li>
+      <li><strong>Service:</strong> ${serviceName} Reading</li>
       <li><strong>Price:</strong> ${servicePrice}</li>
     </ul>
 
