@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     title: "CosmoTarot & Healing",
     description: "CosmoTarot & Healing offers Tarot readings, Reiki healing, and a variety of spiritual products like stones, bracelets, and candles.",
-    url: "https://www.cosmostarothealing.com/",
+    url: "https://www.cosmostarothealing.com",
     siteName: "CosmoTarot & Healing",
     images: [
       {
