@@ -1,6 +1,5 @@
-
-
-export async function GET(request, { params }) {
+export async function GET(request, context) {
+    const { params } = await context; // ✅ await context
     const { id } = params;
   
     const res = await fetch(`https://cosmos-admin-smoky.vercel.app/api/products/fetch/${id}`, {
