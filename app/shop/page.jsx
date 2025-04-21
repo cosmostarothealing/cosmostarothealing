@@ -31,7 +31,7 @@ export default function ShopPage() {
   return (
     <>
     <Navbar/>
-    <div className="px-6 py-10 space-y-20  min-h-screen">
+    <div className="px-1 py-4  min-h-screen">
       {CATEGORIES.map((cat) => (
         <CategorySection
           key={cat}

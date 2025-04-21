@@ -21,7 +21,7 @@ export default function CategorySection({ title, products }) {
   if (!products.length) return null;
 
   return (
-    <section ref={ref} className="px-4 md:px-6 lg:px-8">
+    <section ref={ref} className="px-1 md:px-6 lg:px-8">
       <h2 className="text-3xl font-bold mb-6 text-black relative pb-4">
         {title}
         <span className="absolute bottom-0 left-0 w-16 h-1 bg-red-800 rounded-full"></span>
