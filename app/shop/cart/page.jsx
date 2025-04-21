@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import { XMarkIcon, PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Navbar from "../../nopage/components/shopnav";
+import { useRouter } from "next/navigation";
+import { signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../../lib/firebase";
+
 
 const Skeleton = ({ className }) => (
     <div className={`animate-pulse bg-gray-200 rounded-lg relative overflow-hidden ${className}`}>
@@ -16,6 +20,35 @@ export default function CartPage() {
     const [cartItems, setCartItems] = useState([]);
     const [products, setProducts] = useState({});
     const [loading, setLoading] = useState(true);
+
+
+    const router = useRouter();
+
+const handleCheckout = async () => {
+    const userEmail = localStorage.getItem("userEmail");
+    const userName = localStorage.getItem("userName");
+    const userPhoto = localStorage.getItem("userPhoto");
+
+    if (!userEmail || !userName || !userPhoto) {
+        // User not signed in — trigger sign in
+        try {
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user;
+
+            localStorage.setItem("userEmail", user.email);
+            localStorage.setItem("userName", user.displayName);
+            localStorage.setItem("userPhoto", user.photoURL);
+
+            router.push("/shop/checkout");
+        } catch (error) {
+            alert("Sign in failed. Please try again.");
+        }
+    } else {
+        // User already signed in
+        router.push("/shop/checkout");
+    }
+};
+
 
     // Load cart items from localStorage
     useEffect(() => {
@@ -81,21 +114,21 @@ export default function CartPage() {
         return (
             <>
                 <Navbar />
-            <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
-                <motion.div
-                    initial={{ scale: 0.5, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    className="text-center"
-                >
-                    <h1 className="text-3xl font-bold text-black mb-4">Your Cart is Empty</h1>
-                    <Link
-                        href="/shop"
-                        className="inline-block bg-red-800 text-white px-6 py-2 rounded-lg hover:bg-red-900 transition-all font-medium"
+                <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
+                    <motion.div
+                        initial={{ scale: 0.5, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        className="text-center"
                     >
-                        Continue Shopping
-                    </Link>
-                </motion.div>
-            </div>
+                        <h1 className="text-3xl font-bold text-black mb-4">Your Cart is Empty</h1>
+                        <Link
+                            href="/shop"
+                            className="inline-block bg-red-800 text-white px-6 py-2 rounded-lg hover:bg-red-900 transition-all font-medium"
+                        >
+                            Continue Shopping
+                        </Link>
+                    </motion.div>
+                </div>
             </>
         );
     }
@@ -208,28 +241,28 @@ export default function CartPage() {
                                 </div>
                             </div>
 
-                            <Link
-                            href="/shop/checkout"
-                            >
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="w-full bg-red-800 text-white py-3 rounded-lg font-bold mt-6 hover:bg-red-900 transition-colors"
-                            >
+                           
+                                <motion.button
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="w-full bg-red-800 text-white py-3 rounded-lg font-bold mt-6 hover:bg-red-900 transition-colors"
+                                    onClick={handleCheckout}
+                                >
+
                                 Proceed to Checkout
                             </motion.button>
-                            </Link>
+                        
 
-                            <Link
-                                href="/shop"
-                                className="inline-block w-full text-center text-red-800 hover:text-red-900 font-medium mt-4"
-                            >
-                                ← Continue Shopping
-                            </Link>
-                        </div>
+                        <Link
+                            href="/shop"
+                            className="inline-block w-full text-center text-red-800 hover:text-red-900 font-medium mt-4"
+                        >
+                            ← Continue Shopping
+                        </Link>
                     </div>
                 </div>
             </div>
+        </div >
         </>
     );
 }

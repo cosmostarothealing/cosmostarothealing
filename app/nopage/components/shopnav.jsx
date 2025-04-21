@@ -116,13 +116,13 @@ export default function Navbar() {
                 {/* Dropdown */}
                 {showDropdown && (
                     <div className="absolute top-14 left-0 bg-white border rounded shadow-md w-40 z-10">
-                        <Link
+                        {/* <Link
                             href="/my-orders"
                             className="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
                             onClick={() => setShowDropdown(false)}
                         >
                             My Orders
-                        </Link>
+                        </Link> */}
                         <button
                             onClick={handleLogout}
                             className="w-full text-left px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
