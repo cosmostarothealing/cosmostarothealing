@@ -47,7 +47,7 @@ const Navbar = () => {
                             <Image
                                 src={Logo} // replace with your logo path
                                 alt="Company Logo"
-                                
+
                                 className="w-full h-full"
                                 priority
                             />
@@ -117,21 +117,24 @@ const Navbar = () => {
                     >
                         <div className="pt-2 pb-4 space-y-4 px-4">
                             {navItems.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="border-b block text-black hover:text-blue-600 px-4 py-3 font-2xl hover:bg-gray-50  transition-colors"
-                                >
-                                    {item.name}
-                                </Link>
+                                <div key={item.name} onClick={() => setIsOpen(false)}>
+                                    <Link
+                                        href={item.href}
+                                        className="border-b block text-black hover:text-blue-600 px-4 py-3 font-2xl hover:bg-gray-50  transition-colors"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </div>
                             ))}
-                            <Link
-                                href="/shop"
-                                className="bg-[#800505] text-white hover:bg-white hover:text-[#800505] border border-[#800505] block text-center px-6 py-3 rounded-lg  transition-colors font-semibold shadow-md"
-                            >
-                                Shop now →
-                            </Link>
+                            <div onClick={() => setIsOpen(false)}>
+                                <Link
+                                    href="/shop"
+                                    className="bg-[#800505] text-white hover:bg-white hover:text-[#800505] border border-[#800505] block text-center px-6 py-3 rounded-lg  transition-colors font-semibold shadow-md"
+                                >
+                                    Shop now →
+                                </Link>
+                            </div>
+
                         </div>
                     </motion.div>
                 )}

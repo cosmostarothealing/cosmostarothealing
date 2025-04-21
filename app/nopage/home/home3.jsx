@@ -54,7 +54,7 @@ export default function Page() {
                         <h1 className="text-3xl lg:text-4xl tracking-wider font-extralight text-[#926d41] mb-4">CRYSTALS</h1>
                         <p>Align your energy with handpicked crystals chosen for protection, manifestation, and inner growth.</p>
 
-                        <Link href="/" className="mt-4 relative inline-flex items-center group-hover:text-[#926d41] transition-colors">
+                        <Link href="/shop" className="mt-4 relative inline-flex items-center group-hover:text-[#926d41] transition-colors">
                             <span className="mr-1 transform transition-transform duration-300 group-hover:rotate-90 text-[#ca9d75]">✦</span>
                             <span className="relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 group-hover:after:w-full after:h-[1px] after:bg-[#ca9d75] after:transition-all after:duration-300">Learn more</span>
                         </Link>

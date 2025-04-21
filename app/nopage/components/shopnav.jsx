@@ -83,7 +83,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="w-full px-6 py-4 bg-white shadow-md flex items-center justify-between">
+        <nav className="w-full px-6 py-4 bg-white shadow-md flex items-center justify-between sticky top-20 z-50">
             {/* Left Side: Sign In or User Info */}
             <div className="flex items-center gap-4 relative" ref={dropdownRef}>
                 {!user ? (

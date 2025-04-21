@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const SkeletonCard = () => (
-  <div className="rounded-xl overflow-hidden bg-white shadow animate-pulse">
-    <div className="relative aspect-[5/4] bg-gray-200" />
+  <div className="rounded-xl overflow-hidden bg-white shadow-lg animate-pulse">
+    <div className="relative aspect-[5/4] bg-red-100/20" />
     <div className="p-4 space-y-2">
-      <div className="h-4 bg-gray-300 w-3/4 rounded" />
-      <div className="h-4 bg-gray-200 w-1/2 rounded" />
-      <div className="h-8 bg-gray-300 w-2/3 rounded mt-2" />
+      <div className="h-5 bg-red-100/30 w-3/4 rounded-full" />
+      <div className="h-4 bg-red-100/20 w-1/2 rounded-full" />
+      <div className="h-8 bg-red-100/30 w-2/3 rounded-lg mt-2" />
     </div>
   </div>
 );
@@ -21,13 +21,14 @@ export default function CategorySection({ title, products }) {
   if (!products.length) return null;
 
   return (
-    <section ref={ref}>
-      <h2 className="text-3xl font-bold mb-6 text-gray-800 border-b border-gray-300 pb-2">
+    <section ref={ref} className="px-4 md:px-6 lg:px-8">
+      <h2 className="text-3xl font-bold mb-6 text-black relative pb-4">
         {title}
+        <span className="absolute bottom-0 left-0 w-16 h-1 bg-red-800 rounded-full"></span>
       </h2>
 
       <motion.div
-        className="grid grid-cols-2 lg:grid-cols-4 gap-8"
+        className="flex snap-x snap-mandatory overflow-x-auto pb-8 lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-visible"
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
@@ -36,12 +37,11 @@ export default function CategorySection({ title, products }) {
           ? products.map((product) => (
               <motion.div
                 key={product._id}
-                className="group relative rounded-xl overflow-hidden shadow transition duration-300"
-                
+                className="snap-start min-w-[85%] mr-4 flex-shrink-0 lg:min-w-0 lg:mr-0 relative group"
                 whileTap={{ scale: 0.98 }}
               >
-                <Link href={`/shop/${product._id}`}>
-                  <div>
+                <Link href={`/shop/${product._id}`} className="block">
+                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                     <div className="relative aspect-[5/4] overflow-hidden">
                       <motion.img
                         src={product.img1}
@@ -57,22 +57,29 @@ export default function CategorySection({ title, products }) {
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
                       />
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
                     </div>
 
-                    <div className="p-4">
-                      <h3 className="text-lg font-semibold text-gray-900 truncate">
+                    <div className="p-4 space-y-2">
+                      <h3 className="text-lg font-bold text-black truncate">
                         {product.name}
                       </h3>
-                      <p className="text-sm text-gray-600 mt-1">
+                      <p className="text-red-800 font-semibold text-lg">
                         Rs. {product.price}
                       </p>
-                      
+                      <button className="w-full py-2 text-sm font-medium text-white bg-red-800 rounded-lg hover:bg-red-900 transition-colors duration-200">
+                        View Product
+                      </button>
                     </div>
                   </div>
                 </Link>
               </motion.div>
             ))
-          : [...Array(4)].map((_, i) => <SkeletonCard key={i} />)}
+          : [...Array(4)].map((_, i) => (
+              <div key={i} className="min-w-[85%] mr-4 flex-shrink-0 lg:min-w-0 lg:mr-0">
+                <SkeletonCard />
+              </div>
+            ))}
       </motion.div>
     </section>
   );

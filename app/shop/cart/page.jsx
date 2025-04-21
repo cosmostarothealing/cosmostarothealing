@@ -137,7 +137,7 @@ const handleCheckout = async () => {
         <>
             <Navbar />
             <div className="min-h-screen">
-                <div className="container mx-auto px-4 lg:px-10 py-8">
+                <div className="container mx-auto px-1 lg:px-10 py-8">
                     <motion.h1
                         initial={{ y: -20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
@@ -154,7 +154,7 @@ const handleCheckout = async () => {
                                 const images = [product.img1, product.img2].filter(Boolean);
 
                                 return (
-                                    <div key={item.slug} className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                                    <div key={item.slug} className="bg-white rounded-xl shadow-lg p-4 lg:p-6 border border-gray-200">
                                         <div className="flex gap-6">
                                             {/* Product Image */}
                                             <div className="relative w-32 h-32 rounded-lg overflow-hidden">

@@ -58,7 +58,7 @@ const Footer = () => {
           {/* Quick Links */}
           <motion.div variants={itemVariants} className="space-y-4">
             <h4 className="text-lg font-semibold">Explore</h4>
-            {['Tarot Reading', 'Reiki Healing', 'Crystal Shop'].map((link) => (
+            {['Tarot Reading', 'Reiki Healing', 'Shop'].map((link) => (
               <motion.div
                 key={link}
                 whileHover={{ x: 5 }}
