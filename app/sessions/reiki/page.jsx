@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { SparklesIcon, HeartIcon, SunIcon } from '@heroicons/react/24/solid';
 
 
+
+
 export default function ReikiPage() {
     const services = [
         {
