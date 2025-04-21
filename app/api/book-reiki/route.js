@@ -92,14 +92,14 @@ export async function POST(req) {
 
         // Send emails
         await transporter.sendMail({
-            from: `"Cosmostarot Healing" <${process.env.EMAIL_USER}>`,
+            from: `"Cosmostarot & Healing" <${process.env.EMAIL_USER}>`,
             to: process.env.ADMIN_EMAIL,
             subject: `New Healing Request: ${serviceName}`,
             html: adminHtml
         });
 
         await transporter.sendMail({
-            from: `"Cosmostarot Healing" <${process.env.EMAIL_USER}>`,
+            from: `"Cosmostarot & Healing" <${process.env.EMAIL_USER}>`,
             to: email,
             subject: `Healing Session Confirmation: ${serviceName}`,
             html: userHtml

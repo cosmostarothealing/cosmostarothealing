@@ -2,6 +2,7 @@
 import { useParams } from 'next/navigation';
 import { useState } from 'react';
 
+
 const BookingPage = () => {
     const { slug } = useParams();
     const [formData, setFormData] = useState({

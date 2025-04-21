@@ -84,7 +84,7 @@ const Navbar = () => {
                             className="ml-8 flex items-center"
                         >
                             <Link
-                                href="/free-consultation"
+                                href="/shop"
                                 className="bg-[#800505] text-white hover:bg-white hover:text-[#800505] border border-[#800505] px-4 font-medium py-3 rounded-full hover:scale-105 transition-all text-md  shadow-lg"
                             >
                                 Shop now →
@@ -127,7 +127,7 @@ const Navbar = () => {
                                 </Link>
                             ))}
                             <Link
-                                href="/free-consultation"
+                                href="/shop"
                                 className="bg-[#800505] text-white hover:bg-white hover:text-[#800505] border border-[#800505] block text-center px-6 py-3 rounded-lg  transition-colors font-semibold shadow-md"
                             >
                                 Shop now →
