@@ -49,7 +49,7 @@ export default function Navbar() {
             {/* Right Side: Cart Link with Badge */}
             <div className="relative">
                 <Link
-                    href="/cart"
+                    href="/shop/cart"
                     className="group flex items-center gap-2 text-red-800 font-semibold text-lg hover:underline underline-offset-4 transition"
                 >
                     <FiShoppingCart className="text-2xl group-hover:scale-110 transition-transform" />
