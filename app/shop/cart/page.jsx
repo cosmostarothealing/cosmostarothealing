@@ -208,6 +208,9 @@ export default function CartPage() {
                                 </div>
                             </div>
 
+                            <Link
+                            href="/shop/checkout"
+                            >
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
@@ -215,6 +218,7 @@ export default function CartPage() {
                             >
                                 Proceed to Checkout
                             </motion.button>
+                            </Link>
 
                             <Link
                                 href="/shop"
