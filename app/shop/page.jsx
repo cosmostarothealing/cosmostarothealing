@@ -8,8 +8,9 @@ const CATEGORIES = [
   "Tumble stone",
   "Raw stone",
   "Reiki stone",
-  "Worry bracelets",
+  "Worry stone",
   "Spell candles",
+  "Bracelets",
 ];
 
 export default function ShopPage() {
