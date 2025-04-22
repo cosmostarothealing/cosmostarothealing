@@ -10,7 +10,7 @@ export default function TarotPage() {
         generalReadings: [
             {
                 name: 'Reconciliation',
-                description: 'In-depth look into a past relationship or friendship, checking for chances of reconciliation.',
+                description: 'In-depth look into a past relationship or friendship, checking for chances of .',
                 price: 'Rs.150',
                 duration: '20-30 min'
             },
@@ -81,17 +81,17 @@ export default function TarotPage() {
                     </p>
                 </motion.div>
 
-                {/* Floating elements */}
+
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     {[...Array(15)].map((_, i) => (
                         <motion.div
                             key={i}
-                            className="absolute bg-[#800505]/10 w-3 h-3 rounded-full"
+                            className="absolute left-1/2 transform -translate-x-1/2 bg-[#800505]/10 w-3 h-3 rounded-full"
                             initial={{ y: 0, opacity: 0 }}
                             animate={{
                                 y: [-20, 100],
                                 opacity: [0, 0.4, 0],
-                                x: Math.random() * 100 - 50
+                                x: Math.random() * 100 - 50 // still allows small left/right movement
                             }}
                             transition={{
                                 duration: 6 + Math.random() * 4,
@@ -99,23 +99,25 @@ export default function TarotPage() {
                                 delay: Math.random() * 2
                             }}
                         />
+
                     ))}
                 </div>
             </section>
 
             {/* Services Section */}
-            <div className="max-w-7xl mx-auto px-6 py-16">
+            <div className="container mx-auto px-4 py-16">
                 {/* General Readings */}
+
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
+                    initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    className="mb-20"
+                    className='mb-20'
                 >
                     <div className="flex items-center gap-4 mb-8">
                         <div className="p-3 bg-[#800505]/10 rounded-xl">
-                            <BookOpenIcon className="w-8 h-8 text-[#800505]" />
+                            <MoonIcon className="w-8 h-8 text-[#800505]" />
                         </div>
-                        <h2 className="text-3xl font-bold text-[#800505]">General Readings</h2>
+                        <h2 className="text-2xl lg:text-3xl font-bold text-[#800505]">General Readings</h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -125,7 +127,7 @@ export default function TarotPage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-2 border-[#800505]/10"
                             >
                                 <div className="flex justify-between items-start mb-4">
                                     <h3 className="text-xl font-bold">{service.name}</h3>
@@ -136,7 +138,6 @@ export default function TarotPage() {
                                 <p className="text-[#555] mb-4">{service.description}</p>
                                 <div className="flex justify-between items-center">
                                     <span className="text-2xl font-bold text-[#800505]">{service.price}</span>
-                 
                                     <Link
                                         href={`/sessions/tarot/${service.name.toLowerCase().replace(/ /g, '-')}-${service.price.replace('₹', '')}`}
                                         className="bg-[#800505] text-white px-4 py-2 rounded-lg hover:bg-[#6a0404] transition"

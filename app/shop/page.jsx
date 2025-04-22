@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CategorySection from "../nopage/components/CategorySection";
 import Navbar from "../nopage/components/shopnav"
 
@@ -14,33 +14,21 @@ const CATEGORIES = [
 ];
 
 export default function ShopPage() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await fetch("/api/products");
-        const data = await res.json();
-        setProducts(data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-    fetchProducts();
-  }, []);
+  const [loadedCategories, setLoadedCategories] = useState(new Set());
 
   return (
     <>
-    <Navbar/>
-    <div className="px-1 py-4  min-h-screen">
-      {CATEGORIES.map((cat) => (
-        <CategorySection
-          key={cat}
-          title={cat}
-          products={products.filter((p) => p.type === cat)}
-        />
-      ))}
-    </div>
+      <Navbar />
+      <div className="px-1 py-4 min-h-screen">
+        {CATEGORIES.map((cat) => (
+          <CategorySection
+            key={cat}
+            category={cat}
+            loadedCategories={loadedCategories}
+            setLoadedCategories={setLoadedCategories}
+          />
+        ))}
+      </div>
     </>
   );
 }
