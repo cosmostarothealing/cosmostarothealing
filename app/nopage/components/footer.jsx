@@ -2,7 +2,9 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { EnvelopeIcon, PhoneIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
-import { Facebook, Instagram, Twitter } from 'lucide-react';
+import { Instagram } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+
 
 const Footer = () => {
   const staggerVariants = {
@@ -43,16 +45,27 @@ const Footer = () => {
               Unlock your spiritual potential through ancient practices and modern guidance.
             </p>
             <div className="flex gap-5 text-amber-200">
-              {[Facebook, Instagram, Twitter].map((Icon, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.1 }}
-                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 cursor-pointer"
-                >
-                  <Icon className="w-5 h-5" />
-                </motion.div>
-              ))}
+              <motion.a
+                href="https://wa.me/918736085038?text=Hi%20I%20am%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 cursor-pointer"
+              >
+                <FaWhatsapp className="w-5 h-5" />
+              </motion.a>
+
+              <motion.a
+                href="https://www.instagram.com/cosmostarot_111?igsh=MW9rNDNoamM2dnI1cA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 cursor-pointer"
+              >
+                <Instagram className="w-5 h-5" />
+              </motion.a>
             </div>
+
           </motion.div>
 
           {/* Quick Links */}
@@ -104,7 +117,7 @@ const Footer = () => {
         >
           © {new Date().getFullYear()} Cosmostarot & Healing. All rights reserved.<br />
           <div className="mt-2">
-            <Link href="/privacy" className="hover:text-amber-200">Sacred Privacy</Link> • 
+            <Link href="/privacy" className="hover:text-amber-200">Sacred Privacy</Link> •
             <Link href="/terms" className="hover:text-amber-200 mx-2">Universal Terms</Link>
           </div>
         </motion.div>

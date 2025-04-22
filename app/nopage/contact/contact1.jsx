@@ -47,37 +47,37 @@ export default function ContactPage() {
         {/* Left Panel (unchanged) */}
 
 
-<motion.div
-initial={{ opacity: 0, x: -40 }}
-animate={{ opacity: 1, x: 0 }}
-transition={{ duration: 0.8 }}
-className="bg-[#800505] text-white p-10 flex flex-col justify-center relative z-10"
->
-<h2 className="text-4xl font-bold mb-6 leading-snug">Let’s Connect</h2>
-<p className="mb-8 text-white/80">
-  I'd love to hear from you. Whether you have a question, want to book a session, or just say hi — I’m here. ✨
-</p>
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="bg-[#800505] text-white p-10 flex flex-col justify-center relative z-10"
+        >
+          <h2 className="text-4xl font-bold mb-6 leading-snug">Let’s Connect</h2>
+          <p className="mb-8 text-white/80">
+            I'd love to hear from you. Whether you have a question, want to book a session, or just say hi — I’m here. ✨
+          </p>
 
-<div className="space-y-6 text-white/90">
-  <div className="flex items-center gap-4">
-    <EnvelopeIcon className="w-6 h-6" />
-    <a href="mailto:schitrangdaa@gmail.com">schitrangdaa@gmail.com</a>
-  </div>
-  <div className="flex items-center gap-4">
-    <PhoneIcon className="w-6 h-6" />
-    <a href="https://wa.me/918736085038" target="_blank">+91 87360 85038</a>
-  </div>
-  <div className="flex items-center gap-4">
-    <MapPinIcon className="w-6 h-6" />
-    <span>Online – Available Globally 🌍</span>
-  </div>
-</div>
+          <div className="space-y-6 text-white/90">
+            <div className="flex items-center gap-4">
+              <EnvelopeIcon className="w-6 h-6" />
+              <a href="mailto:schitrangdaa@gmail.com">schitrangdaa@gmail.com</a>
+            </div>
+            <div className="flex items-center gap-4">
+              <PhoneIcon className="w-6 h-6" />
+              <a href="https://wa.me/918736085038?text=Hi%20I%20am%20interested%20in%20your%20services" target="_blank">+91 87360 85038</a>
+            </div>
+            <div className="flex items-center gap-4">
+              <MapPinIcon className="w-6 h-6" />
+              <span>Online – Available Globally 🌍</span>
+            </div>
+          </div>
 
-{/* Floating Spiritual Shapes */}
-<div className="absolute top-0 right-0 opacity-20">
-  <img src="/tarot-symbol.png" alt="symbol" className="w-40 rotate-12" />
-</div>
-</motion.div>
+          {/* Floating Spiritual Shapes */}
+          <div className="absolute top-0 right-0 opacity-20">
+            <img src="/tarot-symbol.png" alt="symbol" className="w-40 rotate-12" />
+          </div>
+        </motion.div>
 
 
         {/* Right Panel - Contact Form */}
