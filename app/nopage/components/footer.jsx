@@ -94,10 +94,10 @@ const Footer = () => {
                 <PhoneIcon className="h-5 w-5 text-amber-200" />
                 <span>+91 87360 85038</span>
               </div>
-              <div className="flex items-center space-x-2">
+              {/* <div className="flex items-center space-x-2">
                 <GlobeAltIcon className="h-5 w-5 text-amber-200" />
                 <span>New Moon Studio, Cosmic Valley</span>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </motion.div>
