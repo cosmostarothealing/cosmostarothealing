@@ -8,7 +8,7 @@ const CATEGORIES = [
   "Tumble stone",
   "Raw stone",
   "Reiki stone",
-  "Worry stone",
+  "Worry Stone",
   "Spell candles",
   "Bracelets",
 ];
