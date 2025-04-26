@@ -24,30 +24,30 @@ export default function CartPage() {
 
     const router = useRouter();
 
-const handleCheckout = async () => {
-    const userEmail = localStorage.getItem("userEmail");
-    const userName = localStorage.getItem("userName");
-    const userPhoto = localStorage.getItem("userPhoto");
+    const handleCheckout = async () => {
+        const userEmail = localStorage.getItem("userEmail");
+        const userName = localStorage.getItem("userName");
+        const userPhoto = localStorage.getItem("userPhoto");
 
-    if (!userEmail || !userName || !userPhoto) {
-        // User not signed in — trigger sign in
-        try {
-            const result = await signInWithPopup(auth, provider);
-            const user = result.user;
+        if (!userEmail || !userName || !userPhoto) {
+            // User not signed in — trigger sign in
+            try {
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
 
-            localStorage.setItem("userEmail", user.email);
-            localStorage.setItem("userName", user.displayName);
-            localStorage.setItem("userPhoto", user.photoURL);
+                localStorage.setItem("userEmail", user.email);
+                localStorage.setItem("userName", user.displayName);
+                localStorage.setItem("userPhoto", user.photoURL);
 
+                router.push("/shop/checkout");
+            } catch (error) {
+                alert("Sign in failed. Please try again.");
+            }
+        } else {
+            // User already signed in
             router.push("/shop/checkout");
-        } catch (error) {
-            alert("Sign in failed. Please try again.");
         }
-    } else {
-        // User already signed in
-        router.push("/shop/checkout");
-    }
-};
+    };
 
 
     // Load cart items from localStorage
@@ -107,8 +107,8 @@ const handleCheckout = async () => {
         return sum + (price * item.quantity);
     }, 0);
 
-    const shipping = subtotal > 500 ? 0 : 70;
-    const total = subtotal + shipping;
+   
+    const total = subtotal;
 
     if (!loading && cartItems.length === 0) {
         return (
@@ -226,43 +226,43 @@ const handleCheckout = async () => {
                                     <span className="font-medium">Rs. {subtotal.toFixed(2)}</span>
                                 </div>
 
-                                <div className="flex justify-between">
-                                    <span className="text-gray-600">Shipping</span>
-                                    <span className="font-medium">
-                                        {shipping === 0 ? 'Free' : `Rs. ${shipping.toFixed(2)}`}
-                                    </span>
-                                </div>
+
+
 
                                 <div className="border-t pt-4">
                                     <div className="flex justify-between text-xl font-bold text-black">
                                         <span>Total</span>
                                         <span>Rs. {total.toFixed(2)}</span>
+
+                                    </div>
+                                    <div className="flex justify-end">
+                                        <span className="text-gray-600">+ shipping charges</span>
                                     </div>
                                 </div>
                             </div>
 
-                           
-                                <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="w-full bg-red-800 text-white py-3 rounded-lg font-bold mt-6 hover:bg-red-900 transition-colors"
-                                    onClick={handleCheckout}
-                                >
+
+                            <motion.button
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full bg-red-800 text-white py-3 rounded-lg font-bold mt-6 hover:bg-red-900 transition-colors"
+                                onClick={handleCheckout}
+                            >
 
                                 Proceed to Checkout
                             </motion.button>
-                        
 
-                        <Link
-                            href="/shop"
-                            className="inline-block w-full text-center text-red-800 hover:text-red-900 font-medium mt-4"
-                        >
-                            ← Continue Shopping
-                        </Link>
+
+                            <Link
+                                href="/shop"
+                                className="inline-block w-full text-center text-red-800 hover:text-red-900 font-medium mt-4"
+                            >
+                                ← Continue Shopping
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div >
+            </div >
         </>
     );
 }

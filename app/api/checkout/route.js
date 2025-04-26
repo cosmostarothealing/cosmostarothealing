@@ -55,8 +55,8 @@ export async function POST(req) {
             }
         }
 
-        const shipping = orderTotal > 500 ? 0 : 70;
-        const grandTotal = orderTotal + shipping;
+        
+        const grandTotal = orderTotal;
 
         // Generate order items HTML for emails
         const orderItemsHtml = orderItems.map(item => `
@@ -123,7 +123,7 @@ export async function POST(req) {
                         </tr>
                         <tr>
                             <td colspan="3" style="padding: 8px; border: 1px solid #ddd; text-align: right;"><strong>Shipping</strong></td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">${shipping === 0 ? 'Free' : `Rs. ${shipping.toFixed(2)}`}</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">+ shipping charges</td>
                         </tr>
                         <tr>
                             <td colspan="3" style="padding: 8px; border: 1px solid #ddd; text-align: right;"><strong>Grand Total</strong></td>
@@ -180,7 +180,7 @@ export async function POST(req) {
                         </tr>
                         <tr>
                             <td colspan="3" style="padding: 8px; border: 1px solid #ddd; text-align: right;"><strong>Shipping</strong></td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">${shipping === 0 ? 'Free' : `Rs. ${shipping.toFixed(2)}`}</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">+ shipping charges</td>
                         </tr>
                         <tr>
                             <td colspan="3" style="padding: 8px; border: 1px solid #ddd; text-align: right;"><strong>Total</strong></td>
