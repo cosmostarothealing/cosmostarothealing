@@ -196,6 +196,7 @@ export async function POST(req) {
         </div>
         `;
 
+        
         // Send emails
         await transporter.sendMail({
             from: `"Order@Cosmostarot_&_Healing" <${process.env.EMAIL_USER}>`,
