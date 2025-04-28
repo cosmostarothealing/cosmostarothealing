@@ -10,6 +10,8 @@ const CATEGORIES = [
   "Reiki stone",
   "Worry Stone",
   "Spell candles",
+  "Bath salt",     
+  "Spell Jars",
   "Bracelets",
 ];
 
