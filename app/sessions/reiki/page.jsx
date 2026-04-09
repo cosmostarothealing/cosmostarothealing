@@ -12,19 +12,19 @@ export default function ReikiPage() {
             name: 'Love Healing',
             description: 'Harmonize your heart chakra and emotional body. This session focuses on releasing past emotional wounds, enhancing self-love, and attracting healthy relationships through targeted energy work.',
             price: 'Rs.1200/day',
-            op:'Rs.1200'
+            op: 'Rs.1200'
         },
         {
-            name: 'Aura Cleaning',
-            description: 'Purify your energy field with deep spiritual cleansing. Removes stagnant energy, psychic debris, and negative attachments while strengthening your natural energetic protection.',
+            name: 'Career Healing',
+            description: 'Enhance clarity, confidence, and growth in your professional life. Helps remove career blockages, attract new opportunities, and align your energy with success and stability.',
             price: 'Rs.333/day',
-            op:'Rs.333'
+            op: 'Rs.333'
         },
         {
-            name: '7 Chakra Healing',
-            description: 'Complete energy system alignment balancing all main chakras. Restores optimal energy flow from root to crown, addressing physical, emotional, and spiritual blockages.',
+            name: 'Protection',
+            description: 'Strengthen your aura with powerful energetic protection. Shields you from negativity, unwanted influences, and emotional drain while creating a safe and balanced energy field.',
             price: 'Rs.444/day',
-            op:'Rs.444'
+            op: 'Rs.444'
         }
     ];
 
