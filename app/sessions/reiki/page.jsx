@@ -11,8 +11,8 @@ export default function ReikiPage() {
         {
             name: 'Love Healing',
             description: 'Harmonize your heart chakra and emotional body. This session focuses on releasing past emotional wounds, enhancing self-love, and attracting healthy relationships through targeted energy work.',
-            price: 'Rs.222/day',
-            op:'Rs.222'
+            price: 'Rs.1200/day',
+            op:'Rs.1200'
         },
         {
             name: 'Aura Cleaning',

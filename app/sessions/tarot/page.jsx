@@ -11,51 +11,51 @@ export default function TarotPage() {
             {
                 name: 'Reconciliation',
                 description: 'In-depth look into a past relationship or friendship, checking for chances of .',
-                price: 'Rs.150',
+                price: 'Rs.350',
                 duration: '20-30 min'
             },
             {
                 name: 'Career',
                 description: 'Near future outlook (6 months) of your job/career, includes one personalized question.',
-                price: 'Rs.150',
+                price: 'Rs.350',
                 duration: '20-30 min'
             },
             {
                 name: '3 Month Outlook',
                 description: 'Overview of next 3 months regarding love life, work life, home environment, and finances.',
-                price: 'Rs.175',
+                price: 'Rs.1300',
                 duration: '20-30 min'
             }
         ],
         advancedSpreads: [
-            {
-                name: '6 Card Spread',
-                description: 'Broad view across key life areas: mental health, relationships, career, health, travel, finances.',
-                price: 'Rs.300',
-                duration: '30-40 min'
-            },
+            // {
+            //     name: '6 Card Spread',
+            //     description: 'Broad view across key life areas: mental health, relationships, career, health, travel, finances.',
+            //     price: 'Rs.300',
+            //     duration: '30-40 min'
+            // },
             {
                 name: '12 Month Spread',
                 description: 'Calendar-style projection of the next 12 months from reading month.',
-                price: 'Rs.300',
+                price: 'Rs.1200',
                 duration: '30-40 min'
             },
-            {
-                name: '7 Chakra Spread',
-                description: 'Overview of all chakras, identifying blocks and healing needs.',
-                price: 'Rs.500',
-                duration: '1-2 hrs'
-            },
+            // {
+            //     name: '7 Chakra Spread',
+            //     description: 'Overview of all chakras, identifying blocks and healing needs.',
+            //     price: 'Rs.500',
+            //     duration: '1-2 hrs'
+            // },
             {
                 name: 'Horoscope Spread',
                 description: 'In-depth analysis of your birth chart.',
-                price: 'Rs.500',
+                price: 'Rs.2000',
                 duration: '1-2 hrs'
             },
             {
                 name: 'Question and Answers',
                 description: 'General reading where any area of life can be questioned. Rs.100 extra if re-shuffle needed.',
-                price: 'Rs.500',
+                price: 'Rs.2500',
                 duration: '1-2 hrs'
             }
         ]
