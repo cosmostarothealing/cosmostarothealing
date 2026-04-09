@@ -17,14 +17,14 @@ export default function ReikiPage() {
         {
             name: 'Career Healing',
             description: 'Enhance clarity, confidence, and growth in your professional life. Helps remove career blockages, attract new opportunities, and align your energy with success and stability.',
-            price: 'Rs.333/day',
-            op: 'Rs.333'
+            price: 'Rs.1200/day',
+            op: 'Rs.1200'
         },
         {
             name: 'Protection',
             description: 'Strengthen your aura with powerful energetic protection. Shields you from negativity, unwanted influences, and emotional drain while creating a safe and balanced energy field.',
-            price: 'Rs.444/day',
-            op: 'Rs.444'
+            price: 'Rs.1200/day',
+            op: 'Rs.1200'
         }
     ];
 
